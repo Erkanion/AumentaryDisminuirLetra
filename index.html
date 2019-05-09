@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="author" href="humans.txt">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <button class="fontChangeSize" data-action="aumenta" type="">Aumentar Letra</button>
+        <button class="fontChangeSize" data-action="disminuye" type="">Disminuir Letra</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+      <script>
+        var count
+        $('.fontChangeSize').click(function(e){
+          var action,tl
+          tl = $('p').css('font-size');
+          tl = parseInt(tl);
+          action = $(this).attr('data-action');
+          if(action == 'aumenta'){
+            if(tl >= 20){
+              tl = tl
+            } else {
+              tl = tl + 1;
+            }
+            $('p').css('font-size',tl+'px');
+          } else if(action == 'disminuye'){
+            if(tl <= 10){
+              tl = tl
+            } else {
+              tl = tl - 1;
+            }
+            $('p').css('font-size',tl+'px');
+          }
+        });
+      </script>
+</html>
